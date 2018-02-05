@@ -29,7 +29,7 @@ return array(
             'Blog\Controller\Index' => 'Blog\Controller\IndexController',  
         ),
     ),
-    'route' => array(
+    'router' => array(
         'routes' => array(
             'blog' => array(
                 'type' => 'segment',
@@ -39,7 +39,7 @@ return array(
                         'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
                         'id'     => '[0-9]+',
                     ),
-                    'default' => array(
+                    'defaults' => array(
                         'controller' => 'Blog\Controller\Index',
                         'action'     => 'index',
                     ),
