@@ -43,5 +43,86 @@ class Comment
     private $comment;
 
 
-}
 
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set article
+     *
+     * @param integer $article
+     *
+     * @return Comment
+     */
+    public function setArticle($article)
+    {
+        $this->article = $article;
+    
+        return $this;
+    }
+
+    /**
+     * Get article
+     *
+     * @return integer
+     */
+    public function getArticle()
+    {
+        return $this->article;
+    }
+
+    /**
+     * Set userEmail
+     *
+     * @param string $userEmail
+     *
+     * @return Comment
+     */
+    public function setUserEmail($userEmail)
+    {
+        $this->userEmail = $userEmail;
+    
+        return $this;
+    }
+
+    /**
+     * Get userEmail
+     *
+     * @return string
+     */
+    public function getUserEmail()
+    {
+        return $this->userEmail;
+    }
+
+    /**
+     * Set comment
+     *
+     * @param string $comment
+     *
+     * @return Comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    
+        return $this;
+    }
+
+    /**
+     * Get comment
+     *
+     * @return string
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+}
