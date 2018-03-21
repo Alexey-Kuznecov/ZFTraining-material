@@ -118,5 +118,33 @@ class CategoryController extends BaseController
 
         return $this->redirect()->toRoute('admin/category');
     }
+    
+    public function deleteAction()
+    {
+        $id = $this->params()->fromRoute('id', 0);
+        $em = $this->getEntityManager();
+        
+        $status = 'success';
+        $message = 'Запись удалениа';
+        
+        try
+        {
+            $repository = $em->getRepository('Blog\Entity\Category');
+            $category = $repository->find($id);
+            $em->remove($category);
+            $em->flush();
+        }
+        catch(\Exception $ex)
+        {
+            $status = 'error';
+            $message = 'Ошибка уданение записи: ' . $ex->getMessage();
+        }
+        
+        $this->flashMessenger()
+                    ->setNamespace($status)
+                    ->addMessage($message);
+        
+        return $this->redirect()->toRoute('admin/category');
+    }
 }
 
