@@ -2,12 +2,12 @@
 <div class="well" />
 <?php
 
-    $form->setAttribute('action', $this->url('admin/category', array('action' => 'add')));
+    $form->setAttribute('action', $this->url('admin/category', array('action' => 'edit', 'id' => $id)));
     $form->prepare();
 
     echo $this->form()->openTag($form);
     
-        echo '<fieldset><legend>Дабовление категории</legend><br/>';
+        echo '<fieldset><legend>Редактирование категории</legend><br/>';
     
     foreach ($form as $element) 
     {       
